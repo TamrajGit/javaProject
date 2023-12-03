@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Build'){
+            steps{
+                sh 'mvn clean package'
+            }
+            post{
+                success{
+                    echo "Archiving the Artifact"
+                    archiveArtifcats artifcats: "**/target/*.war"
+                }
+            }
+        }
+        stage('Deploy it to tomcat server'){
+
+        }
+    }
+}
