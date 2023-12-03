@@ -17,7 +17,7 @@ pipline{
         }
         stage('deploy to tomcat server'){
             step{
-                deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://localhost:8099/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat8(credentialsId: 'tomcat-cred', path: '', url: 'http://192.168.144.1:8099/')], contextPath: null, war: '**/*.war'
             }
         }
     }
