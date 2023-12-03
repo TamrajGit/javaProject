@@ -2,6 +2,7 @@ pipline{
     agent any
     tools{
         maven 'local_maven' 
+    }
     stages{
         stage('Build'){
             step{
@@ -33,3 +34,4 @@ pipline{
         }
     }
 }
+
